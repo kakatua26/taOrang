@@ -10,6 +10,6 @@ jangan lupa sesuaikan location untuk data latih dan uji di file main.
 
 ganti 'gambar.jpg' di folder dataUji untuk menguji gambar lain.
 
-gambar dari android di load ke folder ini.
+gambar dari android di load ke folder dataUji.
 
 Thank you.
