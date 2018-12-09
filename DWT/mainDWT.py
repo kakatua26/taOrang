@@ -210,8 +210,8 @@ def mainDWT(nilaiK):
     mean_HL1_list_test = []
     mean_HH1_list_test = []
     group_test = []
-    for i in range(1,9):
-        img = cv2.imread('DATA/tangantest%d.jpg' %(i)) #load gambar ke-i
+    for i in 1:
+        img = cv2.imread('DataUji/tangantest%d.jpg' %(i)) #load gambar ke-i
         resized_image = cv2.resize(img, (500,256)) #rezise image
         img_n = (cv2.cvtColor(resized_image, cv2.COLOR_BGR2GRAY)) #ubah gambar ke grayscale
 
@@ -361,10 +361,10 @@ def mainDWT(nilaiK):
         #print("standar deviasi HH %d: " %(i), standar_deviasiHH)
         standar_dHH1_test.append(standar_deviasiHH1)
         
-        if (i>=1 and i<=4):
-            group_test.append("Terdeteksi")
-        else:
-            group_test.append("Tidak Terdeteksi")
+#       if (i>=1 and i<=4):
+#           group_test.append("Terdeteksi")
+#       else:
+#           group_test.append("Tidak Terdeteksi")
             
 
 
@@ -484,11 +484,9 @@ def mainDWT(nilaiK):
 
     dfallarray_test = dfall_test.values
     dfallarray = dfall.values
-
-
-
+	
     groups = np.asarray(group)
-    groups_test = np.asarray(group_test)
+#    groups_test = np.asarray(group_test)
 
     ##########################################################
 
@@ -498,11 +496,11 @@ def mainDWT(nilaiK):
     y_train = groups
     X_test = dfallarray_test
     y_test = groups_test
-
+	
     neigh = KNeighborsClassifier(n_neighbors=k)
     neigh.fit(X_train, y_train)
     prediksi = neigh.predict(X_test)
-    akurasi = accuracy_score(prediksi, y_test)
+#    akurasi = accuracy_score(prediksi, y_test)
     #print(prediksi)
     #print(round(akurasi*100,2))
 
@@ -510,4 +508,4 @@ def mainDWT(nilaiK):
 
 if __name__ == "__main__":
     import sys
-    fib(int(sys.argv[1]))
+    mainDWT(int(sys.argv[1]))
