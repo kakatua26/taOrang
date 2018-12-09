@@ -9,7 +9,7 @@ function [hasil] = mainglcm(knn)
     uji = imread(fullfile(D1,imagetest.name));
     %ubah K disini
     k = knn;
-
+    pack
     %Loop Data Latih
     for ii=1:nfiles
         imagetrains(ii).name;
