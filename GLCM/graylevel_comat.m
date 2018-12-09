@@ -4,6 +4,7 @@ function [hasilanalisis] = graylevel_comat(input)
     range = getrangefromclass(input);
     slope = 8 / (range(2)-range(1));
     intercept = 1 - (slope*(range(1)));
+    pack
     input = floor(imlincomb(slope,input,intercept,'double'));
     input(input > 8) = 8;
     input(input < 1) = 1;
